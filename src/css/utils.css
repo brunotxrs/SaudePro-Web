@@ -1,0 +1,30 @@
+.background-linear-gradient-buttons {
+    border-radius: 0.3125rem;
+    color: var(--white);
+    background: var(--first-green);
+    box-shadow:  0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.5);
+    border: none;
+    outline: none;
+}
+
+.background-linear-gradient-buttons.btn-active {
+    transform: translateY(0.125rem);
+    box-shadow: unset;
+}
+
+.background-gelo {
+    background: rgba(255, 255, 255, 0.637);
+    backdrop-filter: blur(0.75rem);
+}
+
+.visibility {
+    visibility: hidden;
+}
+
+.outline-aviso {
+    outline: 0.125rem solid var(--color-red) !important;
+}
+
+.color-aviso {
+    color: var(--color-red) !important;
+}
