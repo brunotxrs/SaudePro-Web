@@ -1,0 +1,140 @@
+.main-login {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../assets/img/background-saude-pro.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-montserrat);
+
+
+    .container-login {
+        width: 18.75rem;
+        height: 25rem;
+        background-color: var(--white);
+        border-radius: 1.25rem;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5625rem 1.25rem;
+        box-shadow: 0 0 0.625rem var(--black);
+
+        a {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+            user-select: none;
+            text-decoration: none;
+            outline: none;
+            border: none;
+        
+        
+            img {  
+                filter: drop-shadow(0.0625rem 0.0625rem 0.0625rem #060e00);
+                object-fit: contain;
+                width: 12.5rem;
+                user-select: none;
+            }
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            width: 100%;
+            height: 100%;
+
+            
+            label {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 0.625rem;
+                width: 100%;
+                height: 3.125rem;
+                border-radius: 0.3125rem;
+                padding-left: 0.9375rem;
+                padding-right: 0.9375rem;
+                outline: 0.0625rem solid var(--outline);
+
+                i {
+                    font-size: 1.125rem;
+                    color: var(--outline);
+                    user-select: none;
+                }
+
+                input {
+                    width: 100%;
+                    height: 100%;
+                    border: none;
+                    outline: none;
+                    text-indent: 0.3125rem;
+                    font-size: 1.125rem;
+                    font-family: var(--font-montserrat);
+                    background-color: transparent;
+                }
+
+            }
+
+            label:hover {
+                outline: 0.0625rem solid var(--second-green);
+
+                i {
+                    color: var(--second-green);
+                }
+            }
+
+            .item-msg-aviso {
+                width: 95%;
+                height: 1.875rem;
+                padding: 0.3125rem 0 0 0;
+                color: var(--color-red);
+                font-size: 0.855rem;
+            }
+
+            #btn-login {
+                height: 3.125rem;
+                width: 12.5rem;
+                font-size: 1.25rem;
+                font-weight: 700;
+                text-align: center;
+                letter-spacing: 0.125rem;
+                text-transform: uppercase;
+                font-family: var(--font-inter);
+                user-select: none;
+                cursor: pointer;
+            }
+
+        }
+
+        p {
+            font-size: 0.875rem;
+            font-family: var(--font-montserrat);
+            user-select: none;
+
+
+            span {
+                color: var(--color-green);
+                font-weight: 700;
+                cursor: pointer;
+                font-family: var(--font-inter);
+            }
+
+            span:hover {
+                color: var(--green-bold);
+            }
+        }
+    }
+
+
+}
