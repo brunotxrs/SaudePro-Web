@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --white: #ffffff;
+    --black: #000000;
+    --outline: #646464;
+    --color-green: #7ED348;
+    --green-bold: #073B2B;
+    --first-green: #0F4D0F;
+    --second-green: #008000;
+    --color-red: #ff0000;
+    --font-inter: "Inter", sans-serif;
+    --font-montserrat: "Montserrat", sans-serif;
+
+
+}
+
+
+
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+    /* 1. Força a cor do texto para a sua cor desejada (ex: dourado) */
+    -webkit-text-fill-color: var(--black) !important;
+    
+    /* 2. O truque: cria uma sombra interna gigante com a cor que você quer */
+    /* Use a cor do seu fundo (no seu caso, o vidro translúcido ou o verde) */
+    -webkit-box-shadow: 0 0 0rem 62.5rem rgba(255, 255, 255, 0.15) inset !important;
+    
+    /* 3. (Opcional) Atrasa a transição para o navegador não conseguir "piscar" o branco */
+    transition: background-color 5000s ease-in-out 0s;
+}
