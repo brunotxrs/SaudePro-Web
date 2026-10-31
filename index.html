@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaúdePro - Portal do Paciente</title>
+    <link rel="shortcut icon" href="./src/assets/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./src/css/index.css">
+</head>
+<body>
+    <main class="main-login">
+        <section class="container-login">
+
+            <a href="./index.html" title="SaúdePro"><img src="./src/assets/img/saude-pro-logo.png" alt="Logo SaúdePro"></a>
+
+            <form action="" novalidate id="form-login">
+                
+                <label for="login-cpf" id="item-login-user" title="Digite seu CPF">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" name="cpf" id="login-cpf" placeholder="Digite seu CPF" required>
+                </label>
+                <span class="item-msg-aviso"></span>
+
+
+                <label for="login-password" id="item-password-user" title="Digite sua senha">
+                    <i class="fa-solid fa-lock"  id="lock"></i>
+                    <input type="password" name="password"  placeholder="Digite sua senha" id="login-password" required>
+                    <i class="fa-solid fa-eye-slash" id="ico-eye"></i>
+                </label>
+                <span class="item-msg-aviso"></span>
+
+                <button type="submit" id="btn-login" class="background-linear-gradient-buttons" title="Entrar">Entrar</button>
+            </form>
+            <p>Esqueceu a senha? <span>clique aqui.</span></p>
+        </section>
+    </main>
+
+
+    <script type="module" src="./src/js/index.js"></script>
+</body>
+</html>
