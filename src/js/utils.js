@@ -1,5 +1,3 @@
-
-
 function applyAvisoMessage(item, message){
     item.innerText = message
    
@@ -9,7 +7,7 @@ function applyAvisoMessage(item, message){
 
 }
 
-function applyAvisoClass( itemParam, index , classStyles){
+function applyAvisoClass(itemParam, index , classStyles){
     
     itemParam[index].classList.add(classStyles);
     
@@ -44,5 +42,24 @@ const maskCpf = ((event) => {
     event.target.value = valor;
 })
 
+function generateRandomPassword(length = 8) {
+    // Define os caracteres permitidos (Maiúsculas, minúsculas, números e símbolos)
+    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%&*";
+    
+    let password = "";
+    
+    // Faz um loop para gerar cada caractere
+    for (let i = 0; i < length; i++) {
+        // Math.random() gera um número entre 0 e 1.
+        // Multiplicamos pelo tamanho da string e usamos Math.floor para pegar o índice exato.
+        const randomIndex = Math.floor(Math.random() * chars.length);
+        
+        // Pega o caractere do índice sorteado e adiciona na senha
+        password += chars[randomIndex];
+    }
+    
+    return password;
+}
 
-export { applyAvisoMessage, applyAvisoClass, changeIcos, maskCpf };
+
+export { applyAvisoMessage, applyAvisoClass, changeIcos, maskCpf, generateRandomPassword };
