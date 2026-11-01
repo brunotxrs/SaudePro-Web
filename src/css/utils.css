@@ -28,3 +28,16 @@
 .color-aviso {
     color: var(--color-red) !important;
 }
+
+.outline-mouse-enter {
+    outline: 0.0625rem solid var(--second-green);
+}
+
+.outline-mouse-out {
+    outline: 0.0625rem solid var(--outline);
+}
+
+.outline-mouse-out:hover {
+    outline: 0.0625rem solid var(--second-green);
+
+}
