@@ -6,9 +6,12 @@ export const labelsLogin = document.getElementsByTagName('label');
 export const icosLogin = document.getElementsByTagName('i');
 export const formLogin = document.getElementById('form-login');
 export const icoLock = document.getElementById('lock');
-
-
+export const clickHere = document.getElementById('click-here');
 export const icoEye = document.getElementById('ico-eye');
+export const formRecover = document.getElementById('form-recover');
+export const inputRecoverCpf = document.getElementById('recover-cpf');
+export const btnRecover = document.getElementById('btn-recover');
+
 
 function hasElements(){
     if(
@@ -19,8 +22,12 @@ function hasElements(){
         !labelsLogin ||
         !icosLogin ||
         !formLogin ||
-        !icoEye||
-        !icoLock
+        !icoEye ||
+        !icoLock ||
+        !clickHere ||
+        !formRecover ||
+        !inputRecoverCpf ||
+        !btnRecover
     ) return;
 
 
