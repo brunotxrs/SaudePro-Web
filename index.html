@@ -15,14 +15,14 @@
 
             <form action="" novalidate id="form-login">
                 
-                <label for="login-cpf" id="item-login-user" title="Digite seu CPF">
+                <label for="login-cpf" id="item-login-user" title="Digite seu CPF" class="outline-mouse-out">
                     <i class="fa-solid fa-user"></i>
                     <input type="text" name="cpf" id="login-cpf" placeholder="Digite seu CPF" required>
                 </label>
                 <span class="item-msg-aviso"></span>
 
 
-                <label for="login-password" id="item-password-user" title="Digite sua senha">
+                <label for="login-password" id="item-password-user" title="Digite sua senha" class="outline-mouse-out">
                     <i class="fa-solid fa-lock"  id="lock"></i>
                     <input type="password" name="password"  placeholder="Digite sua senha" id="login-password" required>
                     <i class="fa-solid fa-eye-slash" id="ico-eye"></i>
@@ -36,6 +36,20 @@
     </main>
 
 
+
+    <!-- Importando a biblioteca QRCode.js via CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    
+    <!-- 1. jQuery (obrigatório) -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- 2. Inputmask (a versão 5.x é a mais moderna) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.8/jquery.inputmask.min.js"></script>
+
+    <script src="https://cloudflare.com"></script>
+
+
     <script type="module" src="./src/js/index.js"></script>
+
 </body>
 </html>
