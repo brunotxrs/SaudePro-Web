@@ -7,7 +7,7 @@
     background-size: cover;
     padding: 1.25rem;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     font-family: var(--font-montserrat);
@@ -94,13 +94,7 @@
                 }
             }
 
-            .item-msg-aviso {
-                width: 95%;
-                height: 1.875rem;
-                padding: 0.3125rem 0 0 0;
-                color: var(--color-red);
-                font-size: 0.855rem;
-            }
+            
 
             #btn-login {
                 height: 3.125rem;
@@ -136,5 +130,109 @@
         }
     }
 
+    .container-recover-new-password{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 18.75rem;
+        height: 25rem;
+        background-color: var(--white);
+        border-radius: 1.25rem;
+        padding: 0 1.25rem;
+        box-shadow: 0 0 0.625rem var(--black);
+
+        a {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+            user-select: none;
+            text-decoration: none;
+            outline: none;
+            border: none;
+        
+        
+            img {  
+                filter: drop-shadow(0.0625rem 0.0625rem 0.0625rem #060e00);
+                object-fit: contain;
+                width: 12.5rem;
+                user-select: none;
+            }
+        }
+
+
+        h2 {
+            font-family: var(--font-inter);
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-align: center;
+            color: var(--green-bold);
+            text-transform: uppercase;
+            text-shadow: 0 0 0.0625rem var(--outline);
+        }
+
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            height: 150px;
+            width: 100%;
+
+
+            label {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                align-items: center;
+                gap: 0.625rem;
+                width: 100%;
+                height: 3.125rem;
+                border-radius: 0.3125rem;
+                padding-left: 0.9375rem;
+                padding-right: 0.9375rem;
+                outline: 0.0625rem solid var(--outline);
+
+                input {
+                    width: 100%;
+                    height: 3.125rem;
+                    border: none;
+                    outline: none;
+                    text-indent: 0.3125rem;
+                    font-size: 1.125rem;
+                    font-family: var(--font-montserrat);
+                    background-color: transparent;
+                }
+            }
+
+
+            label:hover {
+                outline: 0.0625rem solid var(--second-green);
+
+                i {
+                    color: var(--second-green);
+                }
+            }
+
+            #btn-recover {
+                height: 3.125rem;
+                width: 12.5rem;
+                font-size: 1.25rem;
+                font-weight: 700;
+                text-align: center;
+                letter-spacing: 0.125rem;
+                text-transform: uppercase;
+                font-family: var(--font-inter);
+                user-select: none;
+                cursor: pointer;
+
+            }
+
+        }
+    }
 
 }
