@@ -13,7 +13,7 @@
 
             <a href="./index.html" title="SaúdePro"><img src="./src/assets/img/saude-pro-logo.png" alt="Logo SaúdePro"></a>
 
-            <form action="" novalidate id="form-login">
+            <form action="" method="POST" novalidate id="form-login" onsubmit="return false">
                 
                 <label for="login-cpf" id="item-login-user" title="Digite seu CPF" class="outline-mouse-out">
                     <i class="fa-solid fa-user"></i>
@@ -31,11 +31,30 @@
 
                 <button type="submit" id="btn-login" class="background-linear-gradient-buttons" title="Entrar">Entrar</button>
             </form>
-            <p>Esqueceu a senha? <span>clique aqui.</span></p>
+            <p>Esqueceu a senha? <span id="click-here">clique aqui.</span></p>
+        </section>
+
+        <section class="container-recover-new-password hidden">
+            <a href="./index.html" title="SaúdePro"><img src="./src/assets/img/saude-pro-logo.png" alt="Logo SaúdePro"></a>
+
+            <h2>Recuperar Senha</h2>
+            <form action="" method="POST" novalidate id="form-recover" onsubmit="return false">
+                
+                <label for="recover-cpf" id="item-recover-cpf" title="Digite seu CPF" class="outline-mouse-out">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" name="cpf" id="recover-cpf" placeholder="Digite seu CPF" required>
+                    
+                </label>
+                <span class="item-msg-aviso"></span>
+                <button type="submit" id="btn-recover" class="background-linear-gradient-buttons" title="Recuperar">
+                    Enviar
+                </button>
+            </form>
         </section>
     </main>
 
 
+    <span class="loader hidden"></span>
 
     <!-- Importando a biblioteca QRCode.js via CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
