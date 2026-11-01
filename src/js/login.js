@@ -1,5 +1,64 @@
-import { applyAvisoMessage, applyAvisoClass, changeIcos } from '../js/utils.js'
+import { applyAvisoMessage, applyAvisoClass, changeIcos, maskCpf } from '../js/utils.js';
+import { loadingData } from './data.js';
 import { btnFormLogin, formLogin, icoEye, icoLock, icosLogin, inputCpfLogin, inputPassword, itemMsgAvisoLogin, labelsLogin } from './elementsDom.js';
+
+async function getDataUser(){
+
+    try {
+        
+        const cpfClean = inputCpfLogin.value.replace(/\D/g, '');
+        const senhaClean = inputPassword.value.trim();
+
+        const respostas = await loadingData();
+
+
+        // Verifica se a lista veio vazia ou deu erro
+        if (!respostas || respostas.length === 0) {
+            console.log("Nenhum usuário encontrado ou erro na busca.");
+            return;
+        }
+
+
+        const userFind = respostas.find(user => user.cpf === cpfClean);
+
+        if(!userFind){
+            console.log("CPF não encontrado no banco.");
+            return false;
+        }
+
+
+        if(userFind.senha !== senhaClean) {
+            console.log("Senha incorreta.");
+            return false;
+        }
+
+        // respostas.forEach(user => {
+
+        //     if(user.cpf !== cpfClean){
+        //         console.log("Nao ha usuario");
+
+        //         return false;
+        //     } 
+
+        //     if(user.senha !== senhaClean) {
+        //         console.log("Senha nao confere");
+
+        //         return false;
+        //     }
+
+        //     console.log("Nome: " + user.nome)
+        //     console.log("CPF: " + user.cpf)
+
+        //     return true
+        // })
+
+        return true;
+
+    } catch (error) {
+        console.error('Erro ao consumir os dados:', error);
+    }
+
+}
 
 function toggleSenha() {
    
@@ -17,7 +76,6 @@ function toggleSenha() {
 
     }
 }
-
 
 function inputSenhaChangeIcoClock(){
 
@@ -38,12 +96,11 @@ function inputSenhaChangeIcoClock(){
 
 }
 
-
 function listenForm(){
     
-    if (formLogin) {
-    
-        formLogin.addEventListener('submit', (e) => {
+    if (formLogin) {    
+        formLogin.addEventListener('submit', async(e) => {
+            e.preventDefault(); // Impede o recarregamento
     
             btnFormLogin.classList.add('btn-active');
     
@@ -51,7 +108,6 @@ function listenForm(){
                 btnFormLogin.classList.remove('btn-active');
             }, 1500)
     
-            e.preventDefault(); // Impede o recarregamento
     
             if(inputCpfLogin.value === ''){
     
@@ -78,25 +134,49 @@ function listenForm(){
                     
                 })
     
-                return
+                return;
+            } else {
+                const validLogin = await getDataUser();
+
+                if(!validLogin){
+                    itemMsgAvisoLogin.forEach((item, index) => {
+                        if(index === 0) {
+                            applyAvisoMessage(item, 'CPF ou Senha incorretos!');
+                            applyAvisoClass(labelsLogin, 0, 'outline-aviso');
+                            applyAvisoClass(icosLogin, 0, 'color-aviso');
+                        }
+                    });
+                    return;
+                }
             }
-            
+
+
+
+            // reset icon block
+            icoLock.classList.add('fa-lock');
+            icoLock.classList.remove('fa-lock-open');
+
             formLogin.reset(); // Limpa os campos
+
+
+
         
         });
     }
 }
 
 
-
 function actionsLogin(){
-    inputSenhaChangeIcoClock()
-    listenForm()
-
+    inputCpfLogin.addEventListener('input', maskCpf); // aplicando mascara de cpf
+    
+    inputSenhaChangeIcoClock();
+    listenForm();
 
     icoEye.addEventListener('click', () => {
         toggleSenha()
     })
+
+
 }
 
 export { actionsLogin };
