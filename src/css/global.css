@@ -19,6 +19,15 @@
 
 }
 
+body {
+    width: 100vw;
+    font-family: var(--font-montserrat);
+    background: rgba(255, 255, 255, 0.637);
+    backdrop-filter: blur(0.75rem);
+    color: var(--black);
+    overflow-x: hidden;
+}
+
 
 
 
