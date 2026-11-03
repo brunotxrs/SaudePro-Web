@@ -1,0 +1,579 @@
+.main-home {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1.25rem;
+
+    .container-consulta {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 20rem;
+        border-radius: 0.3125rem;
+        justify-content: space-evenly;
+        padding: 0.625rem;
+        background-image: linear-gradient(var(--bg-gelo), var(--bg-gelo)), url('../assets/img/background-saude-pro.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-bottom: 1.875rem;
+        user-select: none;
+
+        .sub-box-ico {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding-top: 0.625rem;
+
+            .ico-fa-stethoscope {
+                height: 6.25rem;
+                width: 6.25rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                
+    
+                .fa-stethoscope {
+                    font-size: 3rem;
+                }
+            }
+
+        }
+
+        .sub-box-consulta {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-items: center;
+            justify-content: space-around;
+            width: 100%;
+            height: 100%;
+            padding: 0 0.3125rem;
+            
+            .box-consulta {
+                width: 100%;
+                height: 6.25rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: center;
+                
+                #nome-profissional {
+                    width: 100%;
+                    font-size: 1.3rem;
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 0.625rem;
+                    font-family: var(--font-montserrat);
+                    letter-spacing: 0.125rem;
+                    line-height: 150%;
+                    justify-content: center;
+                    text-shadow: 0.0625rem 0.0625rem 0.125rem var(--bg-card);
+                    text-align: center;
+                }
+    
+                .box-calender {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    width: 100%;
+                    height: 1.875rem;
+                    justify-content: space-evenly;
+                    align-items: center;
+    
+                    .fa-calendar-days, #date-time {
+                        font-size: 1.2rem;
+                    }
+                    
+                    
+                }
+            }
+    
+            .box-buttons {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                height: 3.125rem;
+    
+                button {
+                    height: 90%;
+                    width: 9rem;
+                    border-radius: 2.3125rem;
+                    border: none;
+                    outline: none;
+                    font-size: 1.2rem;
+                    font-weight: 600;
+                    color: var(--text-color);
+                    background-color: transparent;
+                    cursor: pointer;
+                    box-shadow: 0.0625rem 0.0625rem 0.3125rem var(--text-color);
+                }
+    
+                button:nth-child(1){
+                    border: 0.125rem solid var(--green-bold);
+                    background-image: linear-gradient(to right, var(--green-bold) 50%, transparent 50%);
+                    background-size: 200% 100%;
+                    background-position: right bottom;
+                    transition: all 0.4s ease-out;
+                }
+
+                button:nth-child(1):hover {
+                    color: #fff;
+                    background-position: left bottom;
+                }
+    
+                button:nth-child(2) {
+                    border: 0.125rem solid var(--color-red);
+                    background-image: linear-gradient(to right, var(--color-red) 50%, transparent 50%);
+                    background-size: 200% 100%;
+                    background-position: right bottom;
+                    transition: all 0.4s ease-out;
+                }
+
+                button:nth-child(2):hover {
+                    color: #fff;
+                    background-position: left bottom;
+                }
+            }
+
+        }
+
+
+    }
+
+    .container-historic {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        justify-content: space-around;
+        margin-bottom: 1.875rem;
+        user-select: none;
+
+        h2{
+            font-size: 1.2rem;
+            font-family: var(--font-montserrat);
+            font-weight: 600;
+            text-shadow: 0 0 0.125rem var(--bg-card);
+            margin-bottom: 1.25rem;
+        }
+
+        .container-details {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            width: 100%;
+            gap: 0.625rem;
+            padding: 0.3125rem;
+            height: 6.25rem;
+            border-radius: 0.625rem;
+            overflow-y: overlay;
+            overflow-x: hidden;
+            background-color: var(--container-scroll);
+            
+
+            li {
+                display: flex;
+                flex-direction: row;
+                height: 3.125rem;
+                width: 100%;
+                align-items: center;
+                gap: 0.625rem;
+                background-color: var(--bg-gelo);
+                backdrop-filter: var(--backdrop-filter);
+                padding: 0.3125rem 0.625rem;
+                border-radius: 0.3125rem;
+    
+
+                .briefcase-medical {
+                    height: 2.5rem;
+                    width: 2.5rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background: #E0F2F1;
+                    border-radius: 50%;
+
+                    
+                    #ico-fa-briefcase-medical {
+                        color: var(--green-bold);
+                    }
+                }
+
+                .details {
+                    width: 12.5rem;
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: nowrap;
+                    align-items: flex-start;
+                    justify-content: space-around;
+                    height: 100%;
+
+                    #professional {
+                        font-size: 0.9rem;
+                        font-weight: 600;
+                        font-family: var(--font-inter);
+                        user-select: none !important;
+                    }
+
+                    #date {
+                        font-size: 0.8rem;
+                        font-family: var(--font-montserrat);
+                        color: var(--text-color);
+                        width: 9.375rem;
+                        display: flex;
+                        justify-content: space-around;
+                        align-items: center;
+
+                        i {
+                            font-size: 0.7rem;
+                        }
+                    }
+                }
+
+                .details-historic {
+                    display: flex;
+                    flex-direction: row;
+                    height: 100%;
+                    align-items: center;
+                    gap: 0.3125rem;
+                    width: 3.125rem;
+                    justify-content: center;
+
+                    #checking {
+                        font-size: 1.2rem;
+                    }
+
+                    span {
+                        font-size: 1.2rem;
+                        font-family: var(--font-montserrat);
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+
+
+}
+
+@media (48rem <= width <= 63.9375rem){
+
+    .main-home 
+    .container-consulta {
+        flex-direction: row;
+        max-width: 43.75rem;
+        margin: auto auto 1.875rem;
+
+    }
+
+    .main-home 
+    .container-consulta 
+    .sub-box-ico {
+        width: 18.75rem;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    } 
+
+    .main-home 
+    .container-consulta 
+    .sub-box-ico
+    .ico-fa-stethoscope {
+        width: 9.375rem;
+        height: 9.375rem;
+    }
+
+    .main-home 
+    .container-consulta 
+    .sub-box-ico
+    .ico-fa-stethoscope
+    .fa-stethoscope {
+        font-size: 4rem;
+    } 
+
+    .main-home 
+    .container-consulta 
+    .sub-box-consulta {
+        height: 100%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .main-home 
+    .container-consulta 
+    .sub-box-consulta 
+    .box-consulta {
+        height: 9.375rem;
+    } 
+
+    .main-home 
+    .container-consulta 
+    .sub-box-consulta 
+    .box-consulta #nome-profissional {
+        font-size: 2rem;
+    }
+
+    .main-home 
+    .container-consulta 
+    .sub-box-consulta 
+    .box-consulta 
+    .box-calender {
+        height: 3.125rem;
+    }
+
+    .main-home 
+    .container-consulta 
+    .sub-box-consulta 
+    .box-consulta 
+    .box-calender 
+    .fa-calendar-days {
+        font-size: 2.5rem;
+    }
+
+    .main-home 
+    .container-consulta 
+    .sub-box-consulta 
+    .box-consulta 
+    .box-calender #date-time {
+        font-size: 2rem;
+    }
+
+    .main-home 
+    .container-consulta 
+    .sub-box-consulta   
+    .box-buttons  {
+        height: 4.375rem;
+    }
+
+    .main-home 
+    .container-consulta 
+    .sub-box-consulta 
+    .box-buttons 
+    #confirmation {
+        width: 12.5rem;
+        height: 4.375rem;
+        font-size: 1.7rem;
+    }
+
+    .main-home 
+    .container-consulta 
+    .sub-box-consulta 
+    .box-buttons 
+    #canceled {
+        width: 12.5rem;
+        height: 4.375rem;
+        font-size: 1.7rem;
+    }
+
+    /* Segunda seção */
+    .main-home .container-historic {
+        max-width: 43.75rem;
+        margin: auto;
+    }
+
+    .main-home .container-historic .container-details {
+        height: 12.5rem;
+
+        li {
+            gap: 1.25rem;
+
+            .details {
+               width: 70%;
+            }
+
+            .details-historic {
+                width: 200px;
+                justify-content: space-evenly;
+
+                span {
+                    display: flex;
+                }
+            }
+        }
+    }
+
+}
+
+
+@media (width >= 63.9375rem) {
+    .main-home 
+    .container-consulta {
+        flex-direction: row;
+        max-width: 57rem;
+        margin: auto auto 1.875rem;
+
+    }
+
+    .main-home 
+    .container-consulta 
+    .sub-box-ico {
+        width: 31.25rem;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    } 
+
+    .main-home 
+    .container-consulta 
+    .sub-box-ico
+    .ico-fa-stethoscope {
+        width: 9.375rem;
+        height: 9.375rem;
+    }
+
+    .main-home 
+    .container-consulta 
+    .sub-box-ico
+    .ico-fa-stethoscope
+    .fa-stethoscope {
+        font-size: 4rem;
+    } 
+
+    .main-home 
+    .container-consulta 
+    .sub-box-consulta {
+        height: 100%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .main-home 
+    .container-consulta 
+    .sub-box-consulta 
+    .box-consulta {
+        height: 9.375rem;
+    } 
+
+    .main-home 
+    .container-consulta 
+    .sub-box-consulta 
+    .box-consulta #nome-profissional {
+        font-size: 2rem;
+    }
+
+    .main-home 
+    .container-consulta 
+    .sub-box-consulta 
+    .box-consulta 
+    .box-calender {
+        height: 4rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 2.5rem;
+        align-items: center;
+
+    }
+
+    .main-home 
+    .container-consulta 
+    .sub-box-consulta 
+    .box-consulta 
+    .box-calender 
+    .fa-calendar-days {
+        font-size: 2.5rem;
+    }
+
+    .main-home 
+    .container-consulta 
+    .sub-box-consulta 
+    .box-consulta 
+    .box-calender #date-time {
+        font-size: 2rem;
+        align-self: anchor-center;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .main-home 
+    .container-consulta 
+    .sub-box-consulta   
+    .box-buttons  {
+        height: 4.375rem;
+        width: 37.5rem;
+
+        align-self: end;
+        justify-content: space-evenly;
+        
+    }
+
+    .main-home 
+    .container-consulta 
+    .sub-box-consulta 
+    .box-buttons 
+    #confirmation {
+        width: 12.5rem;
+        height: 4.375rem;
+        font-size: 1.7rem;
+    }
+
+    .main-home 
+    .container-consulta 
+    .sub-box-consulta 
+    .box-buttons 
+    #canceled {
+        width: 12.5rem;
+        height: 4.375rem;
+        font-size: 1.7rem;
+    }
+
+
+    /* Segunda seção */
+    .main-home .container-historic {
+        max-width: 57rem;
+        margin: auto auto 2rem; 
+    }
+
+    .main-home .container-historic .container-details {
+        height: 12.5rem;
+       
+
+        li {
+            gap: 1.25rem;
+
+            .details {
+               width: 70%;
+            }
+
+            .details-historic {
+                width: 200px;
+                justify-content: space-evenly;
+
+                span {
+                    display: flex;
+                }
+            }
+        }
+    }
+
+    .main-home .container-historic .container-details {
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .main-home .container-historic .container-details::-webkit-scrollbar {
+        width: 0.5rem;
+    }
+
+    .main-home .container-historic .container-details::-webkit-scrollbar-track {
+        background: transparent; 
+    }
+
+    .main-home .container-historic .container-details::-webkit-scrollbar-thumb {
+        background-color: var(--scroll);
+        border-radius: 0.625rem;
+    }
+
+    .main-home .container-historic .container-details::-webkit-scrollbar-thumb:hover {
+        background-color: var(--text-color); 
+    }
+}
