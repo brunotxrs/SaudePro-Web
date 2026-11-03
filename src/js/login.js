@@ -1,6 +1,6 @@
-import { applyAvisoMessage, applyAvisoClass, changeIcos, maskCpf, generateRandomPassword } from '../js/utils.js';
+import { applyAvisoMessage, applyAvisoClass, changeIcos, maskCpf, generateRandomPassword, spinner } from '../js/utils.js';
 import { loadingData, updatePassword } from './data.js';
-import { btnFormLogin, btnRecover, clickHere, formLogin, formRecover, icoEye, icoLock, icosLogin, inputCpfLogin, inputPassword, inputRecoverCpf, itemMsgAvisoLogin, labelsLogin } from './elementsDom.js';
+import { btnFormLogin, btnRecover, clickHere, formLogin, formRecover, icoEye, icoLock, icosLogin, inputCpfLogin, inputPassword, inputRecoverCpf, itemMsgAvisoLogin, labelsLogin, routeHome } from './elementsDom.js';
 
 function checkingLoginByCpf(response, cpfClean){
     if(!response || response.length === 0) return false;
@@ -138,10 +138,19 @@ function listenForm(){
             // Saved in Session Storage
             const userFind = respostas.find(user => user.cpf === cpfClean);
             sessionStorage.setItem('user', JSON.stringify(userFind));
-            //window.location.href = 'home.html'; // Redireciona para a página home.html
-            
+
             formLogin.reset(); // Limpa os campos
-        
+            
+            document.querySelector('.container-login').classList.add('hidden')
+            
+            spinner(); // Mostra o spinner de carregamento
+
+            window.location.href = routeHome; // Redireciona para a página home.html
+
+            setTimeout(() => {
+                document.querySelector('.container-login').classList.remove('hidden')
+            }, 2000)
+            
         });
     }
 }
@@ -152,10 +161,10 @@ function clickedHere(){
         console.log('clicou aqui');
 
         document.querySelector('.container-login').classList.add('hidden')
-        document.querySelector('.loader').classList.remove('hidden');
+        document.querySelector('.background-linear-gradient-spinner').classList.remove('hidden');
         setTimeout(() => {
 
-            document.querySelector('.loader').classList.add('hidden');
+            document.querySelector('.background-linear-gradient-spinner').classList.add('hidden');
             document.querySelector('.container-recover-new-password').classList.remove('hidden');
 
         },2000)
@@ -248,6 +257,7 @@ function listemInputRecoverPassword(){
 
 
 function actionsLogin(){
+    if(!inputCpfLogin) return;
     inputCpfLogin.addEventListener('input', maskCpf); // aplicando mascara de cpf
     inputRecoverCpf.addEventListener('input', maskCpf); // aplicando mascara de cpf
     
