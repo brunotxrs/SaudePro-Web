@@ -1,3 +1,5 @@
+import { containerNav } from "./elementsDom.js";
+
 function applyAvisoMessage(item, message){
     item.innerText = message
    
@@ -61,5 +63,45 @@ function generateRandomPassword(length = 8) {
     return password;
 }
 
+function spinner(){
+    document.querySelector('.background-linear-gradient-spinner').classList.remove('hidden');
 
-export { applyAvisoMessage, applyAvisoClass, changeIcos, maskCpf, generateRandomPassword };
+    setTimeout(() => {
+        document.querySelector('.background-linear-gradient-spinner').classList.add('hidden');
+    },2000)
+}
+
+function navigationByPage(paramBtn, paramAnc){
+
+    const btn = document.getElementById(paramBtn)
+
+    const sec = document.getElementById(paramAnc)
+
+    if(!btn || !sec) return;
+
+    if (btn && sec) {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault(); // Impede o navegador de mudar a URL (e de recarregar)
+            containerNav.classList.toggle('active-nav')
+            // Rola a tela suavemente até a seção
+            sec.scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'start' 
+            });
+        });
+    }
+}
+
+function btnDown(param){
+    if(!param) return;
+    
+    param.classList.add('btn-clicked');
+
+
+    param.addEventListener('mouseout', () => {
+        param.classList.remove('btn-clicked');
+    })
+}
+
+
+export { applyAvisoMessage, applyAvisoClass, changeIcos, maskCpf, generateRandomPassword, spinner, navigationByPage, btnDown };
