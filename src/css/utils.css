@@ -1,8 +1,8 @@
 .background-linear-gradient-buttons {
     border-radius: 0.3125rem;
-    color: var(--white);
+    color: var(--bg-card);
     background: var(--first-green);
-    box-shadow:  0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.5);
+    box-shadow:  0.125rem 0.125rem 0.25rem var(--text-color);
     border: none;
     outline: none;
 }
@@ -54,49 +54,94 @@
 
 }
 
-.loader {
-  --color-1: #000000;
-  --color-2: #008000;
-  --color-3: rgba(255, 255, 255, 0.4);
-  --size: 1px;
+.masc {
+  background-color: #3b83f675;
+}
 
-  box-sizing: border-box;
-  display: inline-block;
-  width: calc(50 * var(--size));
-  height: calc(80 * var(--size));
-  border-top: calc(5 * var(--size)) solid var(--color-1);
-  border-bottom: calc(5 * var(--size)) solid var(--color-1);
-  position: absolute;
-  background: linear-gradient(var(--color-2) calc(30 * var(--size)), transparent 0) no-repeat;
-  background-size: calc(2 * var(--size)) calc(40 * var(--size));
-  background-position: 50% 0;
-  animation: spinx 5s linear infinite;
-  top: 45%;
-  left: 45%;
-  transform: translate(-50%, -50%);
+.masc:hover {
+  background-color: #3B82F6;
 }
-.loader:before,
-.loader:after {
-  content: '';
-  width: calc(40 * var(--size));
-  left: 50%;
-  height: calc(35 * var(--size));
-  position: absolute;
-  top: 0;
-  transform: translatex(-50%);
-  background: var(--color-3);
-  border-radius: 0 0 calc(20 * var(--size)) calc(20 * var(--size));
-  background-size: 100% auto;
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  animation: lqt 5s linear infinite;
+
+.feme{
+  background-color: #db277875;
 }
-.loader:after {
-  top: auto;
-  bottom: 0;
-  border-radius: calc(20 * var(--size)) calc(20 * var(--size)) 0 0;
-  animation: lqb 5s linear infinite;
+
+.feme:hover{
+  background-color: #db2778;
 }
+
+.user-standard {
+  background-color: #6464648e;
+}
+
+.user-standard:hover {
+  background-color: var(--outline);
+  
+}
+
+.btn-clicked {
+  transform: translateY(0.125rem);
+  box-shadow: unset !important;
+}
+
+.background-linear-gradient-spinner {
+
+  width: 18.75rem;
+  height: 25rem;
+  background: rgba(255, 255, 255, 0.24);
+  backdrop-filter: blur(0.75rem);
+  border-radius: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5625rem 1.25rem;
+  box-shadow: 0 0 0.625rem var(--text-color);
+  
+
+  .loader {
+    --color-1: #000000;
+    --color-2: #008000;
+    --color-3: rgba(255, 255, 255, 0.4);
+    --size: 1px;
+  
+    box-sizing: border-box;
+    display: inline-block;
+    width: calc(50 * var(--size));
+    height: calc(80 * var(--size));
+    border-top: calc(5 * var(--size)) solid var(--color-1);
+    border-bottom: calc(5 * var(--size)) solid var(--color-1);
+    position: relative;
+    background: linear-gradient(var(--color-2) calc(30 * var(--size)), transparent 0) no-repeat;
+    background-size: calc(2 * var(--size)) calc(40 * var(--size));
+    background-position: 50% 0;
+    animation: spinx 5s linear infinite;
+
+  }
+  .loader:before,
+  .loader:after {
+    content: '';
+    width: calc(40 * var(--size));
+    left: 50%;
+    height: calc(35 * var(--size));
+    position: absolute;
+    top: 0;
+    transform: translatex(-50%);
+    background: var(--color-3);
+    border-radius: 0 0 calc(20 * var(--size)) calc(20 * var(--size));
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    animation: lqt 5s linear infinite;
+  }
+  .loader:after {
+    top: auto;
+    bottom: 0;
+    border-radius: calc(20 * var(--size)) calc(20 * var(--size)) 0 0;
+    animation: lqb 5s linear infinite;
+  }
+}
+
 @keyframes lqt {
   0%,
   100% {
@@ -137,13 +182,4 @@
     transform: rotate(360deg);
     background-position: 50% calc(36 * var(--size));
   }
-}
-
-
-@media (width >= 63.9375rem) {
-    .loader  {
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
 }
