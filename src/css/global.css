@@ -5,8 +5,18 @@
 }
 
 :root {
-    --white: #ffffff;
-    --black: #000000;
+
+    /* Variáveis do Light Mode */
+    --bg-body: #F5F7FA;
+    --text-color: #000000;
+    --bg-card: #FFFFFF;
+    --bg-gelo: rgba(255, 255, 255, 0.274);
+    --backdrop-filter: blur(0.75rem);
+
+    --container-scroll: #3b83f675;
+    --scroll: #3B82F6;
+
+    
     --outline: #646464;
     --color-green: #7ED348;
     --green-bold: #073B2B;
@@ -19,13 +29,25 @@
 
 }
 
+body.dark-mode {
+    --bg-body: #073B2B;
+    --text-color: #FFFFFF; /* Branco para o dark */
+    --bg-card: #073B2B;
+    --bg-gelo: rgba(0, 0, 0, 0.514);
+    --backdrop-filter: blur(0.75rem);
+    --container-scroll: #0f4d0f75;
+    --scroll: #008000;
+}
+
+
 body {
     width: 100vw;
     font-family: var(--font-montserrat);
-    background: rgba(255, 255, 255, 0.637);
-    backdrop-filter: blur(0.75rem);
-    color: var(--black);
+    background-color: var(--bg-body);
+    color: var(--text-color);
     overflow-x: hidden;
+    transition: background-color 0.3s, color 0.3s; /* Transição suave */
+    font-family: var(--font-montserrat);
 }
 
 
@@ -39,7 +61,7 @@ textarea:-webkit-autofill,
 textarea:-webkit-autofill:hover,
 textarea:-webkit-autofill:focus {
     /* 1. Força a cor do texto para a sua cor desejada (ex: dourado) */
-    -webkit-text-fill-color: var(--black) !important;
+    -webkit-text-fill-color: var(--text-color) !important;
     
     /* 2. O truque: cria uma sombra interna gigante com a cor que você quer */
     /* Use a cor do seu fundo (no seu caso, o vidro translúcido ou o verde) */
@@ -47,4 +69,13 @@ textarea:-webkit-autofill:focus {
     
     /* 3. (Opcional) Atrasa a transição para o navegador não conseguir "piscar" o branco */
     transition: background-color 5000s ease-in-out 0s;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
