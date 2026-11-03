@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaúdePro - Home</title>
+    <link rel="shortcut icon" href="../assets/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body id="body-home">
+    <header class="header-home">
+        <section class="container-header">
+            <picture>
+                <a href="../html/home.html"><img src="../assets/img/saude-pro-logo.png" alt="SaúdePro Logo" title="SaúdePro Logo" class="logo" id="logo-img"></a>
+            </picture>
+            <i class="fa-solid fa-bars" id="ico-menu"></i>
+            <nav class="container-nav">
+                <span class="user-logout">
+                    <span class="first-letter">F</span>
+                    <button id="logout">Sair</button>
+
+                    <div class="toggle-tema">
+                        <i class="fa-solid fa-sun" id="ico-tema"></i>
+                    </div>
+                </span>
+                <ul>
+                    <li><a href="#" id="btn-inicio">inicio</a></li>
+                    <li><a href="#" id="btn-consultas">Consultas</a></li>
+                    <li><a href="#" id="btn-agendamentos">Novo Agendamentos</a></li>
+                    <li><a href="#" id="btn-contato">Contato</a></li>
+                </ul>                
+            </nav>
+        </section>
+    </header>
+
+    <h2 class="user-get-name" id="sec-inicio">Olá, <span id="user-name"></span></h2>
+
+    <main class="main-home">
+
+        <section class="container-consulta">
+            <div class="sub-box-ico">
+                <span class="ico-fa-stethoscope">
+                    <i class="fa-solid fa-stethoscope"></i>
+                </span>
+            </div>
+
+            <div class="sub-box-consulta">
+                <div class="box-consulta">
+                    <h3 id="nome-profissional"></h3>
+                    <div class="box-calender">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <span id="date-time"></span></span>
+                    </div>
+                </div>
+                <div class="box-buttons">
+                    <button id="confirmation">Confirmar</button>
+                    <button id="canceled">Cancelar</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="container-historic">
+            <h2>Histórico de Consultas</h2>
+
+            <ul class="container-details" id="sec-consultas">
+                 
+            </ul>
+        </section>
+    </main>
+    
+    <script type="module" src="../js/index.js"></script>
+</body>
+</html>
