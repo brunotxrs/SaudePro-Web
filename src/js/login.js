@@ -1,4 +1,4 @@
-import { applyAvisoMessage, applyAvisoClass, changeIcos, maskCpf, generateRandomPassword, spinner } from '../js/utils.js';
+import { applyAvisoMessage, applyAvisoClass, changeIcos, maskCpf, generateRandomPassword, spinner } from './utils.js';
 import { loadingData, updatePassword } from './data.js';
 import { btnFormLogin, btnRecover, clickHere, formLogin, formRecover, icoEye, icoLock, icosLogin, inputCpfLogin, inputPassword, inputRecoverCpf, itemMsgAvisoLogin, labelsLogin, routeHome } from './elementsDom.js';
 
@@ -158,8 +158,6 @@ function listenForm(){
 function clickedHere(){
 
     clickHere.addEventListener('click', () => {
-        console.log('clicou aqui');
-
         document.querySelector('.container-login').classList.add('hidden')
         document.querySelector('.background-linear-gradient-spinner').classList.remove('hidden');
         setTimeout(() => {
@@ -227,7 +225,6 @@ function listemInputRecoverPassword(){
             const email = respostas.find(user => user.cpf === cpfClean).email;
 
             //aplicar aqui a função de envio de email para o usuário com o cpf informado, usando o email encontrado no objeto do usuário.
-            console.log(`Enviando email para ${email}...`);
 
 
             itemMsgAvisoLogin[2].style.fontWeight = 'bold';
@@ -244,7 +241,6 @@ function listemInputRecoverPassword(){
 
             // Atualizar a senha do usuário no banco de dados (simulado aqui)
             updatePassword(cpfClean, newPassword).then(() => {
-                console.log('Senha atualizada com sucesso!');
                 setTimeout(() => {window.location.reload()}, 1500)
             }).catch((error) => {
                 console.error('Erro ao atualizar a senha:', error);
