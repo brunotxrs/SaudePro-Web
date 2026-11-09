@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../css/index.css">
 </head>
 <body id="body-home">
-    <header class="header-home">
+    <header class="header-home forNav">
         <section class="container-header">
             <picture>
                 <a href="../html/home.html"><img src="../assets/img/saude-pro-logo.png" alt="SaúdePro Logo" title="SaúdePro Logo" class="logo" id="logo-img"></a>
@@ -33,41 +33,157 @@
         </section>
     </header>
 
-    <h2 class="user-get-name" id="sec-inicio">Olá, <span id="user-name"></span></h2>
+    <h2 class="user-get-name forNav " id="sec-inicio">Olá, <span id="user-name"></span></h2>
 
-    <main class="main-home">
+    <main class="main-home forNav">
 
-        <section class="container-consulta">
+        <section class="container-consulta forNav">
             <div class="sub-box-ico">
-                <span class="ico-fa-stethoscope">
-                    <i class="fa-solid fa-stethoscope"></i>
+                <span class="ico-fa-stethoscope skeleton">
+                    <i class="fa-solid fa-stethoscope elementVisibility"></i>
                 </span>
             </div>
 
             <div class="sub-box-consulta">
+
                 <div class="box-consulta">
-                    <h3 id="nome-profissional"></h3>
-                    <div class="box-calender">
-                        <i class="fa-solid fa-calendar-days"></i>
-                        <span id="date-time"></span></span>
+                    <h3 id="nome-profissional" class="skeleton"></h3>
+                    <div class="box-calender skeleton">
+                        <i class="fa-solid fa-calendar-days elementVisibility"></i>
+                        <span id="date-time"></span>
                     </div>
+
                 </div>
-                <div class="box-buttons">
-                    <button id="confirmation">Confirmar</button>
-                    <button id="canceled">Cancelar</button>
+
+                <div class="box-buttons skeleton">
+                    <button id="confirmation" class="elementVisibility">Confirmar</button>
+                    <button id="canceled" class="elementVisibility">Cancelar</button>
                 </div>
             </div>
         </section>
 
-        <section class="container-historic">
+        <section class="container-historic forNav" id="sec-consultas">
             <h2>Histórico de Consultas</h2>
 
-            <ul class="container-details" id="sec-consultas">
-                 
+            <ul class="container-details skeleton">
             </ul>
         </section>
+
+        <section class="container-nova-consulta forNav hidden">
+            <label for="search-medico" id="sec-agendamentos" class="search-box">
+                <input type="text" name="search" id="search-medico" class="search-input" placeholder="Pesquise o médico ou especialidade">
+                <i class="fa-solid fa-magnifying-glass searchBtn" id="search-Btn"></i>
+            </label>
+            
+            <ul id="list-medics">
+            </ul>
+
+            <div class="container-details-agendamento hidden">
+                <!-- Area apos selecionado o medico -->
+                <span class="box-description-doctor">
+                </span>
+
+                <div class="container-data-time">
+                    <div class="calendar">
+                        <!-- Cabeçalho de Navegação -->
+                        <div class="calendar-header">
+                            <button id="prev-btn">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </button>
+                            <h2 id="month-year"></h2>
+                            <button id="next-btn">
+                                <i class="fa-solid fa-angle-right"></i>
+                            </button>
+                        </div>
+                        <!-- Estrutura do Grid -->
+                        <div class="calendar-grid">
+                            <!-- Dias da semana no topo -->
+                            <span class="weeks">Dom</span>
+                            <span class="weeks">Seg</span>
+                            <span class="weeks">Ter</span>
+                            <span class="weeks">Qua</span>
+                            <span class="weeks">Qui</span>
+                            <span class="weeks">Sex</span>
+                            <span class="weeks">Sáb</span>
+                        </div>
+                        <!-- Dias do mês gerenciados pelo JS -->
+                        <div class="calendar-grid days" id="calendar-days"></div>
+                    </div>
+                    <div class="times">
+                        <ul id="box-times">
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="novoAgendamento">
+                </div>
+                <button class="hidden" id="btn-confirm-agendamento">Confirmar Agendamento</button>
+            </div>
+        </section>
     </main>
-    
+
+    <footer class="footer-saudepro forNav" id="sec-contato">
+        <div class="footer-container">
+            
+            <!-- Coluna 1: Logo e Sobre -->
+            <div class="footer-col brand-col">
+                <img  src="../assets/img/saude-pro-logo.png" alt="Logo SaúdePro" class="footer-logo">
+                <p class="footer-slogan">Cuidando de você e da sua família com excelência e humanização.</p>
+            </div>
+
+            <!-- Coluna 2: Contato -->
+            <div class="footer-col contact-col">
+                <h3>Contato</h3>
+                <ul class="footer-list">
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        <span>(11) 4002-8922</span>
+                    </li>
+                    <li>
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <span>(11) 98765-4321</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>contato@saudepro.com.br</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-clock"></i>
+                        <span>Segunda a Sexta, das 08h às 18h</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Coluna 3: Endereço -->
+            <div class="footer-col address-col">
+                <h3>Localização</h3>
+                <address class="footer-address">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>
+                        Av. Paulista, 1000 - Bela Vista<br>
+                        São Paulo - SP, CEP: 01310-100
+                    </span>
+                </address>
+            </div>
+
+        </div>
+
+        <!-- Rodapé inferior (Copyright e Redes Sociais) -->
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p>&copy; 2026 Clínica SaúdePro. Todos os direitos reservados.</p>
+                <div class="footer-socials">
+                    <a href="https://www.facebook.com/?locale=pt_BR" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://br.linkedin.com/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="btn-top" class="hidden">
+        <i class="fa-solid fa-circle-up"></i>
+    </button>
     <script type="module" src="../js/index.js"></script>
 </body>
 </html>
