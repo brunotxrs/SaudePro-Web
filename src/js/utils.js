@@ -71,6 +71,11 @@ function spinner(){
     },2000)
 }
 
+function removeNaveBarRight(){
+    containerNav.classList.remove('active-nav');
+    
+}
+
 function navigationByPage(paramBtn, paramAnc){
 
     const btn = document.getElementById(paramBtn)
@@ -81,8 +86,9 @@ function navigationByPage(paramBtn, paramAnc){
 
     if (btn && sec) {
         btn.addEventListener('click', (e) => {
+            
             e.preventDefault(); // Impede o navegador de mudar a URL (e de recarregar)
-            containerNav.classList.toggle('active-nav')
+            removeNaveBarRight()
             // Rola a tela suavemente até a seção
             sec.scrollIntoView({ 
                 behavior: 'smooth', 
@@ -103,5 +109,63 @@ function btnDown(param){
     })
 }
 
+function applicationClass(element, paramAdd, paramRemove){
+    element.classList.add(paramAdd);
+    element.classList.remove(paramRemove);
+}
 
-export { applyAvisoMessage, applyAvisoClass, changeIcos, maskCpf, generateRandomPassword, spinner, navigationByPage, btnDown };
+
+function applyHidden(paramBtn, paramAdd){
+    const btn = document.getElementById(paramBtn);
+    const add = document.querySelector(paramAdd);
+
+    if(!btn || !add) return;
+
+    btn.addEventListener('click', () => {
+        add.classList.add('hidden');
+    })
+}
+
+function removeSkeleton(){
+    const tagElement = document.querySelectorAll('.skeleton');
+    const tagVisibility = document.querySelectorAll('.elementVisibility');
+
+    if(!tagElement || !tagVisibility) return;
+
+    tagElement.forEach((ele) => {
+        ele.classList.remove('skeleton')
+        tagVisibility.forEach((v) => {
+            v.classList.remove('elementVisibility');
+        });
+    })
+
+
+}
+
+function formatarParaDataDB(dataString){
+    const meses = {
+        "Janeiro": 0, "Fevereiro": 1, "Março": 2, "Abril": 3,
+        "Maio": 4, "Junho": 5, "Julho": 6, "Agosto": 7,
+        "Setembro": 8, "Outubro": 9, "Novembro": 10, "Dezembro": 11
+    };
+
+
+    const resposta = dataString.trim().replace(/\s+/g, '-')
+    const [dia, nomeMes, ano] = resposta.split("-");
+    
+    // Pega o mês do objeto
+    const mesIndex = meses[nomeMes]; 
+    
+    // Formata manualmente para YYYY-MM-DD (garantindo zero à esquerda)
+    const diaFormatado = String(dia).padStart(2, '0');
+    const mesFormatado = String(mesIndex + 1).padStart(2, '0');
+    
+    return `${ano}-${mesFormatado}-${diaFormatado}`;
+}
+
+function cleaningHtml(param){
+    document.querySelector(param).innerHTML = '';
+}
+
+
+export { applyAvisoMessage, applyAvisoClass, changeIcos, maskCpf, generateRandomPassword, spinner, navigationByPage, btnDown, applicationClass, removeNaveBarRight, applyHidden, removeSkeleton, formatarParaDataDB, cleaningHtml };
