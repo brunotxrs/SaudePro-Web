@@ -1,0 +1,108 @@
+/* Se você for criar um footer.css */
+.footer-saudepro {
+    background-color: var(--bg-card);
+    color: var(--text-color);
+    border-top: 0.0625rem solid var(--outline);
+    margin-top: 3rem;
+    padding-top: 2rem;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 57rem;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+    gap: 2rem;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 15.625rem;
+
+    .footer-logo {
+        user-select: none;
+    }
+
+    .footer-slogan {
+        user-select: none;
+    }
+}
+
+.footer-col h3 {
+    font-family: var(--font-montserrat);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    user-select: none;
+}
+
+/* Estilo da lista de contatos */
+.footer-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.footer-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    font-family: var(--font-montserrat);
+    font-size: 0.9rem;
+}
+
+.footer-list i {
+    color: var(--scroll);
+    font-size: 1.1rem;
+}
+
+/* Endereço */
+.footer-address {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.625rem;
+    font-style: normal;
+    font-family: var(--font-montserrat);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Bottom do Footer */
+.footer-bottom {
+    background-color: var(--bg-body); /* Cor do fundo normal */
+    padding: 1rem 0;
+    margin-top: 2rem;
+    border-top: 0.0625rem solid var(--outline);
+}
+
+.footer-bottom-content {
+    max-width: 57rem;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-bottom-content p {
+    font-size: 0.8rem;
+    font-family: var(--font-montserrat);
+    color: var(--text-color);
+}
+
+.footer-socials a {
+    color: var(--text-color);
+    font-size: 1.2rem;
+    margin-left: 0.9375rem;
+    transition: color 0.3s;
+}
+
+.footer-socials a:hover {
+    color: var(--scroll);
+}
