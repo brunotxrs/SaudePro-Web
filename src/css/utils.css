@@ -103,7 +103,7 @@
     --color-1: #000000;
     --color-2: #008000;
     --color-3: rgba(255, 255, 255, 0.4);
-    --size: 1px;
+    --size: 0.0625rem;
   
     box-sizing: border-box;
     display: inline-block;
@@ -140,6 +140,46 @@
     border-radius: calc(20 * var(--size)) calc(20 * var(--size)) 0 0;
     animation: lqb 5s linear infinite;
   }
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg, 
+    #64646425 25%, 
+    #64646450 50%, 
+    #64646470 75%
+  );
+  background-size: 200% 100%;
+  animation: loading-wave 1.5s infinite ease-in-out;
+  
+  /* Garante tamanho mínimo enquanto o texto não existe */
+  min-height: 1.2rem; 
+  border-radius: 0.25rem;
+  display: block;
+  margin-bottom: 0.625rem;
+}
+
+.elementVisibility{
+  visibility: hidden;
+}
+
+.divs {}
+
+.divs.touch {
+  background-color: var(--bg-card) !important;
+  color: var(--scroll) !important;
+  font-weight: bolder !important;
+}
+
+
+.filter-img-logo {
+  filter: invert(1) hue-rotate(180deg); 
+}
+
+.btn-aviso-error::after{
+  content: '⚠️ Você já possui uma consulta agendada neste mesmo dia e horário.';
+  background-color: var(--color-red);
+  color: var(--text-color);
 }
 
 @keyframes lqt {
@@ -181,5 +221,14 @@
   100% {
     transform: rotate(360deg);
     background-position: 50% calc(36 * var(--size));
+  }
+}
+
+@keyframes loading-wave {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
   }
 }
