@@ -1,6 +1,35 @@
-import { firstLetter, routeLogin, userName } from "./elementsDom.js";
-import { actionsHeader } from '../js/headerHome.js';
-import { actionsMainHome } from '../js/mainHome.js'
+import { btnTop, firstLetter, routeLogin, userName } from "./elementsDom.js";
+import { actionsHeader } from './headerHome.js';
+import { actionsMainHome } from './mainHome.js';
+import { applicationClass, navigationByPage, removeNaveBarRight } from "./utils.js";
+
+
+function utilScrollToTop() {
+ 
+    function verificarRolagem() {
+        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+
+        if (scrollTop > 20) {
+            btnTop.classList.remove('hidden', );
+        } else {
+            btnTop.classList.add('hidden');
+            btnTop.classList.remove('animando-btn-top')
+        }
+    }
+
+    window.addEventListener("scroll", verificarRolagem);
+
+
+    if(!btnTop) return;
+
+    btnTop.addEventListener("click", function() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        btnTop.classList.add('animando-btn-top')
+
+    });
+
+    verificarRolagem();
+}
 
 
 function helloUser(){
@@ -20,29 +49,37 @@ function helloUser(){
     firstLetter.innerText = userLogado.nome[0];
 
     if(userLogado.sexo === 'Masculino'){
-        firstLetter.classList.add('masc');
-        firstLetter.classList.remove('feme');
         firstLetter.classList.remove('user-standard');
+        applicationClass(firstLetter, 'masc', 'feme');
         return;
     } else if(userLogado.sexo === 'Feminino'){
-        firstLetter.classList.remove('masc');
         firstLetter.classList.remove('user-standard');
-        firstLetter.classList.add('feme');
+        applicationClass(firstLetter, 'feme', 'masc');
         return;
     } else {
-        firstLetter.classList.remove('masc');
         firstLetter.classList.remove('feme');
-        firstLetter.classList.add('user-standard');
+        applicationClass(firstLetter, 'user-standard', 'masc');
         return;
     }
 
 }
 
 
+const closNav = document.querySelectorAll('.forNav');
+closNav.forEach((corpo) => {
+    corpo.addEventListener('mouseenter', () => {
+        removeNaveBarRight();
+    })
+})
+
 function actionsHome (){
     actionsHeader();
     helloUser();
     actionsMainHome();
+
+    navigationByPage('btn-contato', 'sec-contato');
+
+    utilScrollToTop()
 }
 
 export { actionsHome };
