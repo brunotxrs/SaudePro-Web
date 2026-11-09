@@ -1,12 +1,12 @@
-import { btnMenu, btnTema, containerNav, logout, routeLogin } from "./elementsDom.js"
-import { navigationByPage } from "./utils.js";
+import { btnMenu, btnTema, containerNav, hasElements, logout, routeLogin } from "./elementsDom.js"
+import { applyHidden, navigationByPage } from "./utils.js";
 
 function showNavBar(){
 
     if(!btnMenu)return;
 
     btnMenu.addEventListener('click', () => {
-        containerNav.classList.toggle('active-nav')
+        containerNav.classList.toggle('active-nav');
     })
 
 }
@@ -21,8 +21,9 @@ function toggleTheme(){
         document.getElementById('body-home').classList.add('dark-mode');
         
         // Se já estava no dark, aplica o filtro no logo e troca o ícone
-        if (document.getElementById('logo-img')) {
+        if (document.getElementById('logo-img') && document.querySelector('.footer-logo')) {
             document.getElementById('logo-img').classList.add('filter-img-logo');
+            document.querySelector('.footer-logo').classList.add('filter-img-logo');
         }
         if (btnTema) {
             btnTema.classList.remove('fa-moon');
@@ -37,8 +38,12 @@ function toggleTheme(){
             document.getElementById('body-home').classList.toggle('dark-mode');
             
             // Alterna o filtro do logo (se ele existir na página)
+            const logoFooter = document.querySelector('.footer-logo')
             const logo = document.getElementById('logo-img');
-            if (logo) logo.classList.toggle('filter-img-logo');
+            if (logo && logoFooter) {
+                logo.classList.toggle('filter-img-logo');
+                logoFooter.classList.toggle('filter-img-logo');
+            };
     
             //  Define o ícone e salva no navegador
             if (document.body.classList.contains('dark-mode')) {
@@ -66,14 +71,18 @@ function logoutHome(){
     })
 }
 
-
 function actionsHeader(){
     
     showNavBar();
     toggleTheme();
     logoutHome();
 
-    navigationByPage('btn-inicio', 'sec-inicio')
+    
+    navigationByPage('btn-inicio', 'sec-inicio');
+    applyHidden('btn-inicio', '.container-nova-consulta')
+
+    hasElements();
+    
 }
 
 export { actionsHeader }
