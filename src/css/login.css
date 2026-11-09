@@ -1,7 +1,7 @@
 .main-login {
     width: 100vw;
     height: 100vh;
-    background-image: url(../assets/img/background-saude-pro.png);
+    background-image: url(../assets/img/background-saude-pro.avif);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -180,7 +180,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: space-around;
-            height: 150px;
+            height: 9.375rem;
             width: 100%;
 
 
