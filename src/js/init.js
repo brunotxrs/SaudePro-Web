@@ -1,6 +1,6 @@
-import { hasElements, routeLogin } from '../js/elementsDom.js'
-import { actionsLogin } from '../js/login.js';
-import { actionsHome } from '../js/home.js'
+import { hasElements, routeLogin } from './elementsDom.js'
+import { actionsLogin } from './login.js';
+import { actionsHome } from './home.js'
 
 
 
